@@ -8,6 +8,60 @@ Advisors: Prof. Shibendu Shekhar Roy (NIT Durgapur) and Dr. Abhijit Mahapatra (C
 
 The written thesis is on Zenodo: [doi:10.5281/zenodo.22812016](https://doi.org/10.5281/zenodo.22812016).
 
+![Frontal render of the hand assembly](figures/assembly-frontal.jpg)
+
+Frontal SolidWorks render of the assembly. The thumb mechanism is on the right. The finger linkages sit on the dorsal shell.
+
+![Dorsal render of the finger linkages](figures/assembly-sagittal.jpg)
+
+Dorsal render of the same assembly. The arched links over the fingers are the four planar mechanisms.
+
+![Close-up of one finger linkage](figures/finger-linkage-closeup.png)
+
+Close-up of one finger linkage on the dorsal shell.
+
+## Linkage
+
+![Kinematic diagram of one finger](figures/linkage-diagram.png)
+
+Kinematic diagram of one finger. The labels match the loop-closure scripts in `kinematics/`.
+
+![Index finger at the start of travel](figures/index-pose-initial.png)
+
+![Index finger at the end of travel](figures/index-pose-final.png)
+
+Index finger from the forward-kinematics study, at the start of travel and at the end. The dotted curve is the fingertip path.
+
+## Range
+
+![Index deflections before length optimization](figures/index-deflection-before.png)
+
+![Index deflections after length optimization](figures/index-deflection-after.png)
+
+Index-finger joint travel against actuator displacement, before and after the link-length change recorded in `data/length_optimization.xlsx`. After the change, MCP flexion passes 110° and PIP flexion passes the 45° grasp target.
+
+![Index joint angles over the simulation](figures/index-joint-angles.png)
+
+Joint angles over 100 steps of the index-finger simulation.
+
+## Full hand
+
+![Hand linkage, initial pose](figures/hand-pose-initial.png)
+
+![Hand linkage, closed pose](figures/hand-pose-final.png)
+
+All five digits from `hand/hand_simulation.mlx`, open and closed.
+
+![Thumb workspace](figures/thumb-workspace.png)
+
+Thumb linkage and the fingertip workspace from the thumb forward-kinematics study.
+
+## Two-link dynamics
+
+![Angular position of the two-link model](figures/two-link-angular-position.png)
+
+Angular position of the planar two-link model in `dynamics/`.
+
 ## Results carried in this repository
 
 - Modeled MCP flexion extended to 110°.
