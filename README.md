@@ -14,7 +14,7 @@ Frontal and dorsal SolidWorks renders of the assembly, with a close-up of one fi
 
 ## Linkage
 
-![Kinematic diagram beside the same skeleton on the CAD model](figures/linkage-views.png)
+![Kinematic diagram beside the same skeleton on the CAD model](figures/linkage-notation.png)
 
 Kinematic diagram of one finger, and the same skeleton drawn on the CAD model, viewed normal to the sagittal plane. This is Fig. 5 of the thesis. The labels match the loop-closure scripts in `kinematics/`.
 
