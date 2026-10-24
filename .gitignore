@@ -1,0 +1,14 @@
+*.bin
+*.avi
+*.stp
+*.SLDASM
+*.SLDPRT
+*.igs
+*.xmt_txt
+*.zip
+slprj/
+*.slxc
+aview.log
+aview.loq
+*.dmp
+.DS_Store
