@@ -6,7 +6,7 @@ Each non-thumb finger is a planar closed chain of 16 links and 3 mechanism degre
 
 Advisors: Prof. Shibendu Shekhar Roy (NIT Durgapur) and Dr. Abhijit Mahapatra (CSIR-CMERI).
 
-The written thesis is on Zenodo: [doi:10.5281/zenodo.22812016](https://doi.org/10.5281/zenodo.22812016).
+The written thesis is on Zenodo: [doi:10.5281/zenodo.22812016](https://doi.org/10.5281/zenodo.22812016). The file on that record is the signed thesis, with redactions on the front matter.
 
 ![Frontal render of the hand assembly](figures/assembly-frontal.jpg)
 
@@ -26,6 +26,10 @@ Close-up of one finger linkage on the dorsal shell.
 
 Kinematic diagram of one finger. The labels match the loop-closure scripts in `kinematics/`.
 
+![Skeleton of the linkage drawn on the CAD model](figures/linkage-on-cad.png)
+
+Skeleton of the index-finger linkage drawn on the CAD model, viewed normal to the sagittal plane. This is Fig. 5 of the thesis.
+
 ![Index finger at the start of travel](figures/index-pose-initial.png)
 
 ![Index finger at the end of travel](figures/index-pose-final.png)
@@ -42,15 +46,19 @@ Open pose and closed pose from `kinematics/linkage_kinematics.m`, with the finge
 
 ![Index deflections after length optimization](figures/index-deflection-after.png)
 
-Index-finger joint travel against actuator displacement, before and after the link-length change recorded in `data/length_optimization.xlsx`. After the change, MCP flexion passes 110° and PIP flexion passes the 45° grasp target.
+Index-finger joint travel against actuator displacement, before and after the link-length change recorded in `data/length_optimization.xlsx`. After the change, MCP flexion passes 110°. The circular-grasp target in the thesis is a PIP deflection of |δθ₂| = 45°, which the index finger reaches near 26.3 mm of actuator travel.
 
 ![Index joint angles over the simulation](figures/index-joint-angles.png)
 
 Joint angles over 100 steps of the index-finger simulation.
 
-![Joint deflection of three fingers after the length change](figures/finger-deflection-after.png)
+![Joint angles of three fingers after the length change](figures/finger-deflection-after.png)
 
-The same joint deflections for the index, middle, and little fingers, taken from the results sheets in `data/linkage_model_data.xlsx`. The dashed line is 45°. On these curves, θ₁ reaches 45° at 23.8 mm, 20.3 mm, and 25.3 mm of actuator displacement. The workbook has no ring-finger results sheet.
+Joint angles θ₀, θ₁, θ₂, and θ₃ for the index, middle, and little fingers, from the results sheets in `data/linkage_model_data.xlsx`. The dashed line is 45°. These curves are the joint angles stored in the workbook. The thesis plots the absolute deflections |δθ₀| through |δθ₃|, and its circular-grasp target is |δθ₂| = 45°. The workbook has no ring-finger results sheet.
+
+![Ring-finger deflections after the length change](figures/ring-deflection-after.png)
+
+Ring-finger deflections after the length change. This is the project figure used as Fig. 17 of the thesis. The dashed line is 45°. The thesis gives the actuator displacement for |δθ₂| = 45° on this finger as 25.2 mm.
 
 ## Full hand
 
@@ -59,6 +67,10 @@ The same joint deflections for the index, middle, and little fingers, taken from
 ![Hand linkage, closed pose](figures/hand-pose-final.png)
 
 All five digits from `hand/hand_simulation.mlx`, open and closed.
+
+![Thumb linkage schematic](figures/thumb-schematic.png)
+
+Schematic of the thumb linkage. The front view is the flexion–extension chain, and the top view is the abduction–adduction chain. This is Fig. 27 of the thesis. The labels match the thumb scripts in `fingers/thumb/`.
 
 ![Thumb workspace](figures/thumb-workspace.png)
 
@@ -76,14 +88,23 @@ Angular position of the planar two-link model in `dynamics/`.
 
 ## Results carried in this repository
 
-- Modeled MCP flexion extended to 110°.
-- Circular-grasp target of 45° PIP flexion, with actuator travel of about 23.0–27.6 mm across the four fingers.
-- Thumb flexion extended to 50°, with actuator travel of about 23–24 mm.
-- MATLAB and MSC Adams index-finger kinematics agree closely. The Adams run also shows a linkage collision near 60° of index MCP flexion.
+- For the four fingers, range extension targets an MCP angle θ₁,f = −110°. A circular grasp also asks for a PIP deflection |δθ₂| = 45°.
+- At that grasp pose, Table 10 of the thesis lists actuator displacements of 2.63 cm, 2.3 cm, 2.52 cm, and 2.76 cm for the index, middle, ring, and little fingers (about 26.3 mm, 23.0 mm, 25.2 mm, and 27.6 mm). The pulley travel |δθ₀| at the same pose is 100.32°, 87.81°, 96.42°, and 105.44°. Those pulley angles sit above the 76.39° limit that a 15 mm actuator would allow. An actuator of about 30 mm can reach |δθ₂| = 45°.
+- Thumb range extension targets θ₁ from 0° to 50°, and that range is reached by step 10. The two thumb actuators are limited to x ≤ 23.98 mm and x\* ≤ 22.67 mm. The design displacement for the full range of both is 25 mm.
+- Thesis Fig. 24 compares the index-finger pulley angle from MATLAB with an Adams run over 0–10 s, and describes the difference as minor. The spreadsheet plot below is a separate four-finger record.
+- The Adams model shows a collision between the linkage and the finger near 60° of index MCP deflection (thesis Fig. 25).
+
+![Modified index-finger linkage](figures/index-modified-linkage.png)
+
+Index finger after the link lengths were changed in the CAD model. The modified links are red. This is Fig. 23 of the thesis.
+
+![Flexed index finger at the reported collision](figures/index-collision.png)
+
+Flexed pose used for Fig. 25 of the thesis. The thesis reports that a collision between the links and the finger segments first appears near 60° of MCP deflection. The lengthened links are red.
 
 ![Adams and MATLAB finger angle change](figures/adams-vs-matlab.png)
 
-Finger angle change from `data/adams-vs-matlab.xlsx`. The largest absolute difference is 6.6° for the index, 5.3° for the middle, 0.7° for the ring, and 19.2° for the little finger.
+Finger angle change from `data/adams-vs-matlab.xlsx`. The largest absolute difference on this record is 6.6° for the index, 5.3° for the middle, 0.7° for the ring, and 19.2° for the little finger. Thesis Fig. 24 is the separate 0–10 s index-pulley comparison.
 
 ## Layout
 
