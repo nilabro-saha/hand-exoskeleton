@@ -32,6 +32,10 @@ Kinematic diagram of one finger. The labels match the loop-closure scripts in `k
 
 Index finger from the forward-kinematics study, at the start of travel and at the end. The dotted curve is the fingertip path.
 
+![Open and closed poses from the linkage script](figures/index-linkage-motion.png)
+
+Open pose and closed pose from `kinematics/linkage_kinematics.m`, with the fingertip path. In that script the finger command runs from 0° to −107°.
+
 ## Range
 
 ![Index deflections before length optimization](figures/index-deflection-before.png)
@@ -43,6 +47,10 @@ Index-finger joint travel against actuator displacement, before and after the li
 ![Index joint angles over the simulation](figures/index-joint-angles.png)
 
 Joint angles over 100 steps of the index-finger simulation.
+
+![Joint deflection of three fingers after the length change](figures/finger-deflection-after.png)
+
+The same joint deflections for the index, middle, and little fingers, taken from the results sheets in `data/linkage_model_data.xlsx`. The dashed line is 45°. On these curves, θ₁ reaches 45° at 23.8 mm, 20.3 mm, and 25.3 mm of actuator displacement. The workbook has no ring-finger results sheet.
 
 ## Full hand
 
@@ -56,6 +64,10 @@ All five digits from `hand/hand_simulation.mlx`, open and closed.
 
 Thumb linkage and the fingertip workspace from the thumb forward-kinematics study.
 
+![Thumb inverse map](figures/thumb-inverse-theta1.png)
+
+Thumb inverse map θ₁(θ₀, θ₀\*), drawn from `data/theta1-inverse-mapping-500x500.xlsx`. The axes are the query ranges in `fingers/thumb/thumb_analysis.m`.
+
 ## Two-link dynamics
 
 ![Angular position of the two-link model](figures/two-link-angular-position.png)
@@ -68,6 +80,10 @@ Angular position of the planar two-link model in `dynamics/`.
 - Circular-grasp target of 45° PIP flexion, with actuator travel of about 23.0–27.6 mm across the four fingers.
 - Thumb flexion extended to 50°, with actuator travel of about 23–24 mm.
 - MATLAB and MSC Adams index-finger kinematics agree closely. The Adams run also shows a linkage collision near 60° of index MCP flexion.
+
+![Adams and MATLAB finger angle change](figures/adams-vs-matlab.png)
+
+Finger angle change from `data/adams-vs-matlab.xlsx`. The largest absolute difference is 6.6° for the index, 5.3° for the middle, 0.7° for the ring, and 19.2° for the little finger.
 
 ## Layout
 
