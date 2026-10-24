@@ -8,33 +8,19 @@ Advisors: Prof. Shibendu Shekhar Roy (NIT Durgapur) and Dr. Abhijit Mahapatra (C
 
 The written thesis is on Zenodo: [doi:10.5281/zenodo.22812016](https://doi.org/10.5281/zenodo.22812016). The file on that record is the signed thesis, with redactions on the front matter.
 
-![Frontal render of the hand assembly](figures/assembly-frontal.jpg)
+![Frontal and dorsal renders, with one finger linkage](figures/assembly-views.jpg)
 
-Frontal SolidWorks render of the assembly. The thumb mechanism is on the right. The finger linkages sit on the dorsal shell.
-
-![Dorsal render of the finger linkages](figures/assembly-sagittal.jpg)
-
-Dorsal render of the same assembly. The arched links over the fingers are the four planar mechanisms.
-
-![Close-up of one finger linkage](figures/finger-linkage-closeup.png)
-
-Close-up of one finger linkage on the dorsal shell.
+Frontal and dorsal SolidWorks renders of the assembly, with a close-up of one finger linkage. In the frontal view the thumb mechanism is on the right.
 
 ## Linkage
 
-![Kinematic diagram of one finger](figures/linkage-diagram.png)
+![Kinematic diagram beside the same skeleton on the CAD model](figures/linkage-views.png)
 
-Kinematic diagram of one finger. The labels match the loop-closure scripts in `kinematics/`.
+Kinematic diagram of one finger, and the same skeleton drawn on the CAD model, viewed normal to the sagittal plane. This is Fig. 5 of the thesis. The labels match the loop-closure scripts in `kinematics/`.
 
-![Skeleton of the linkage drawn on the CAD model](figures/linkage-on-cad.png)
+![Index finger at the start and end of travel](figures/index-poses.png)
 
-Skeleton of the index-finger linkage drawn on the CAD model, viewed normal to the sagittal plane. This is Fig. 5 of the thesis.
-
-![Index finger at the start of travel](figures/index-pose-initial.png)
-
-![Index finger at the end of travel](figures/index-pose-final.png)
-
-Index finger from the forward-kinematics study, at the start of travel and at the end. The dotted curve is the fingertip path.
+Index finger from the forward-kinematics study, at the start of travel and at the end. The dotted curve on the closed pose is the fingertip path.
 
 ![Open and closed poses from the linkage script](figures/index-linkage-motion.png)
 
@@ -42,9 +28,7 @@ Open pose and closed pose from `kinematics/linkage_kinematics.m`, with the finge
 
 ## Range
 
-![Index deflections before length optimization](figures/index-deflection-before.png)
-
-![Index deflections after length optimization](figures/index-deflection-after.png)
+![Index deflections before and after the length change](figures/index-deflection-pair.png)
 
 Index-finger joint travel against actuator displacement, before and after the link-length change recorded in `data/length_optimization.xlsx`. After the change, MCP flexion passes 110°. The circular-grasp target in the thesis is a PIP deflection of |δθ₂| = 45°, which the index finger reaches near 26.3 mm of actuator travel.
 
@@ -62,23 +46,17 @@ Ring-finger deflections after the length change. This is the project figure used
 
 ## Full hand
 
-![Hand linkage, initial pose](figures/hand-pose-initial.png)
-
-![Hand linkage, closed pose](figures/hand-pose-final.png)
+![Open and closed poses of the full hand](figures/hand-poses.png)
 
 All five digits from `hand/hand_simulation.mlx`, open and closed.
 
-![Thumb linkage schematic](figures/thumb-schematic.png)
+![Thumb linkage schematic, front and top](figures/thumb-views.png)
 
 Schematic of the thumb linkage. The front view is the flexion–extension chain, and the top view is the abduction–adduction chain. This is Fig. 27 of the thesis. The labels match the thumb scripts in `fingers/thumb/`.
 
-![Thumb workspace](figures/thumb-workspace.png)
+![Thumb workspace and inverse map](figures/thumb-study.png)
 
-Thumb linkage and the fingertip workspace from the thumb forward-kinematics study.
-
-![Thumb inverse map](figures/thumb-inverse-theta1.png)
-
-Thumb inverse map θ₁(θ₀, θ₀\*), drawn from `data/theta1-inverse-mapping-500x500.xlsx`. The axes are the query ranges in `fingers/thumb/thumb_analysis.m`.
+Thumb fingertip workspace, and the inverse map θ₁(θ₀, θ₀\*) drawn from `data/theta1-inverse-mapping-500x500.xlsx`. The axes are the query ranges in `fingers/thumb/thumb_analysis.m`.
 
 ## Two-link dynamics
 
@@ -94,13 +72,9 @@ Angular position of the planar two-link model in `dynamics/`.
 - Thesis Fig. 24 compares the index-finger pulley angle from MATLAB with an Adams run over 0–10 s, and describes the difference as minor. The spreadsheet plot below is a separate four-finger record.
 - The Adams model shows a collision between the linkage and the finger near 60° of index MCP deflection (thesis Fig. 25).
 
-![Modified index-finger linkage](figures/index-modified-linkage.png)
+![Modified index linkage and the flexed pose](figures/index-cad-poses.jpg)
 
-Index finger after the link lengths were changed in the CAD model. The modified links are red. This is Fig. 23 of the thesis.
-
-![Flexed index finger at the reported collision](figures/index-collision.png)
-
-Flexed pose used for Fig. 25 of the thesis. The thesis reports that a collision between the links and the finger segments first appears near 60° of MCP deflection. The lengthened links are red.
+Index finger after the link lengths were changed in the CAD model. The lengthened links are red. The extended pose is Fig. 23 of the thesis. The flexed pose is Fig. 25: a collision between the links and the finger segments first appears near 60° of MCP deflection.
 
 ![Adams and MATLAB finger angle change](figures/adams-vs-matlab.png)
 
